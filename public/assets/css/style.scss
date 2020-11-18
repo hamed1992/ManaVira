@@ -1,0 +1,342 @@
+/** @format */
+
+@tailwind base;
+:root {
+  --primary-color: #0b7171;
+}
+* {
+  outline: none;
+  &:focus {
+    outline: none;
+  }
+}
+button {
+  &:focus {
+    outline: none;
+  }
+}
+.text-primary {
+  color: var(--primary-color);
+}
+@font-face {
+  font-family: "fatura";
+  src: url("../fonts/FuturaFuturisLightC.woff2") format("woff2"),
+    url("../fonts/FuturaFuturisLightC.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  background-size: 100%;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  padding-top: 104px;
+}
+.main {
+  padding-right: 8rem;
+  padding-left: 8rem;
+}
+header {
+  margin-bottom: 50px;
+}
+input {
+  &:focus {
+    outline: none;
+  }
+}
+ul {
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+@tailwind components;
+.sidebar-title {
+  font-family: "fatura";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 44px;
+  letter-spacing: -0.6px;
+  color: #0b7171;
+}
+.bg-pic {
+  position: absolute;
+  left: 0;
+  top: 104px;
+  width: 90%;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(224.34deg, #78ffd6 3.69%, #007991 133.19%);
+  border-top-right-radius: 65px;
+  transform: translate(-50%) skew(-30deg);
+}
+.addtobasket {
+  width: 33px;
+  height: 33px;
+  transition: inherite;
+}
+.addtobasket button {
+  width: 33px;
+  transition: all ease 0.6s;
+  height: 33px;
+  background: #23a0a5;
+}
+.product-card {
+  width: 48%;
+  max-width: 48%;
+  transform: scale(0.9);
+  transition: all ease 0.4s;
+}
+.product-card:hover {
+  transform: scale(1);
+}
+.product-card figure {
+  overflow: hidden;
+  border-radius: 51px;
+}
+.product-card figure figcaption {
+  padding: 34px;
+  background: linear-gradient(313.37deg, #50c9c3 6.19%, #96deda 95.6%);
+  min-height: 200px;
+  box-shadow: -9px 0px 29px rgba(89, 197, 186, 0.397864);
+  border-radius: 51px;
+}
+.product-card figure figcaption h6 {
+  font-family: fatura;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 30px;
+  height: 34px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /* identical to box height, or 140% */
+
+  letter-spacing: -1.06667px;
+  color: #ffffff;
+}
+.extra-desc {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  /* identical to box height, or 400% */
+  margin-top: 10px;
+  margin-bottom: 30px;
+  letter-spacing: -0.373333px;
+  display: block;
+  color: #ffffff;
+}
+.desc {
+  font-family: Futura;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 18px;
+  /* or 180% */
+  letter-spacing: -0.266667px;
+  color: #ffffff;
+  margin-bottom: 30px;
+}
+@tailwind utilities;
+
+@media only screen and (max-width: 479px) {
+  .product-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 719px) {
+  .product-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.card-frame {
+  height: 150px;
+  border-radius: 29px;
+  position: relative;
+}
+.card-holder {
+  box-shadow: -9px 0px 29px rgba(229, 229, 229, 0.5);
+  border-radius: 29px;
+  padding: 35px;
+  overflow: hidden;
+  &:before{
+    content:'';
+    position: absolute;
+    width:0%;
+    height:100%;
+    right:0;
+    top:0;
+    z-index:-1;
+    background: linear-gradient(44.39deg, #50c9c3 6.16%, #96deda 94.73%);
+   
+    border-radius: 29px;
+  }
+}
+.price-item {
+  position: absolute;
+  transform: rotate(90deg) translateX(10px) translateY(-10px);
+  opacity: 0;
+  background: var(--primary-color);
+  color: #fff;
+  font-size: 14px;
+  left: 0;
+  top: 50px;
+  padding: 5px 20px;
+  border-radius: 20px;
+  transition: inherite;
+  z-index: 400;
+  
+}
+.sidebar-card {
+  figcaption h6,
+  figcaption span {
+    transition: inherite;
+  }
+  &:hover {
+    .price-item {
+      opacity: 1;
+      transition: all ease 0.4s;
+    }
+    .card-holder {
+      
+      padding-left: 80px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 115%;
+      z-index:1;
+      transition: all solid 0.4s;
+      &:before{
+        width:100%;
+        transition: all ease 0.6s;
+      }
+    }
+    figcaption h6,
+    figcaption span {
+      color: #fff;
+    }
+    .add-btn button {
+      background: #fff;
+      color: #23a0a5;
+    }
+  }
+}
+
+.add-btn {
+  width: 33px;
+  height: 32px;
+  bottom: 20px;
+  right: 20px;
+  transition: inherite;
+  button {
+    width: 33px;
+    height: 32px;
+    background: #23a0a5;
+    transition: all ease 0.6s;
+  }
+}
+.CircularProgress-svg {
+  display: block;
+  .CircularProgress-circleIndeterminate {
+    animation: CircularProgress-keyframes-circular-dash 1.4s ease-in-out
+      infinite;
+    stroke-dasharray: 80px, 200px;
+    stroke-dashoffset: 0px;
+    stroke: var(--primary-color);
+  }
+}
+.CircularProgress-indeterminate {
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  animation: CircularProgress-keyframes-circular-rotate 1.4s linear infinite;
+}
+@-webkit-keyframes CircularProgress-keyframes-circular-dash {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0px;
+  }
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
+}
+@keyframes CircularProgress-keyframes-circular-dash {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0px;
+  }
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
+}
+@-webkit-keyframes CircularProgress-keyframes-circular-rotate {
+  0% {
+    transform-origin: 50% 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes CircularProgress-keyframes-circular-rotate {
+  0% {
+    transform-origin: 50% 50%;
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.tick{
+  width:20px;
+  height:20px;
+  position: relative;
+  &:before{
+    content: '';
+    width: 5px;
+    height: 1px;
+    background: var(--primary-color);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 12px;
+    left: 4px;
+    
+  }
+  &:after{
+    content: '';
+    width: 13px;
+    height: 1px;
+    background: var(--primary-color);
+    transform: rotate(-45deg);
+    position: absolute;
+    top: 10px;
+    left: 6px;
+    
+  }
+}
+.product-card{
+  .tick{
+    &:before,&:after{
+      background: #fff;
+    }
+  }
+
+}
